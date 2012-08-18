@@ -208,10 +208,18 @@
     return row_count;
 }
 
--(void)setupCell:(UITableViewCell *)cell
+-(UITableViewCell *)setupCell:(UITableViewCell *)cell
 {
+    cell.textLabel.minimumFontSize = 12;
+    cell.textLabel.adjustsFontSizeToFitWidth = YES;
+    
+    cell.detailTextLabel.minimumFontSize = 10;
+    cell.detailTextLabel.adjustsFontSizeToFitWidth = YES;
+
     // cell.imageView.layer.masksToBounds = YES;
     // cell.imageView.layer.cornerRadius = 5.0;
+    
+    return cell;
 }
 
 

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ModalDelegate <NSObject>
+@required
+-(void) modalController:(id)controller didSaveWithObject:(id)object;
+-(void) modalController:(id)controller didCancelWithObject:(id)object;
+@end
+
 @interface ROTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 {
     UITableView *_tableView;
@@ -59,7 +65,7 @@
 -(void)onSave:(id)sender;
 -(void)onEdit:(id)sender;
 
-
+-(UITableViewCell *)setupCell:(UITableViewCell *)cell;
 -(NSIndexPath *)shiftedIndexPathForController:(NSFetchedResultsController *)controller atIndexPath:(NSIndexPath *)indexPath;
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath withStyle:(UITableViewCellStyle)style;
 
