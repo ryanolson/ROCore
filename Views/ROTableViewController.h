@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @protocol ModalDelegate <NSObject>
-@required
+@optional
 -(void) modalController:(id)controller didSaveWithObject:(id)object;
 -(void) modalController:(id)controller didCancelWithObject:(id)object;
 @end
