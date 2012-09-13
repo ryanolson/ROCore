@@ -37,7 +37,7 @@
     UIView * _accessorySpacer;
 }
 
-@property (nonatomic, retain) UITableView * tableView;
+@property (nonatomic, retain) IBOutlet UITableView * tableView;
 @property (nonatomic, retain) UIColor * plainBackGroundColor;
 @property (nonatomic, retain) UIColor * groundedBackgroundColor;
 
