@@ -14,6 +14,8 @@
 -(void) modalController:(id)controller didCancelWithObject:(id)object;
 @end
 
+typedef void (^ROOjectSelectedCallback)(id object);
+
 @interface ROTableViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSFetchedResultsControllerDelegate>
 {
     UITableView *_tableView;
@@ -44,7 +46,7 @@
 @property (nonatomic, retain) NSManagedObjectContext * context;
 @property (nonatomic, strong) NSFetchedResultsController * fetchedResultsController;
 
-
+@property (nonatomic, strong) ROOjectSelectedCallback onObjectSelected;
 
 @property (nonatomic, assign) BOOL canSave;
 @property (nonatomic, retain) UIBarButtonItem *editButton;
